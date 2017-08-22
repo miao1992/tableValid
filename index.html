@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>癫痫防治管理平台--移动版</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-stayus-bar-style" content="black">
+    <meta name="keywords" content="兆瑞医疗、医疗、癫痫、疾病防治">
+    <meta name="description" content="癫痫防治管理平台">
+    <script src="js/rem.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div class="bg">
+      <form  id="form-user">
+        <!-- 手机版头部-病人基本信息 -->
+        <div class="header">
+            <h1>全身强直——阵挛性发作癫痫病例筛查表</h1>
+            <!-- 患者基本信息 -->
+            <table class="message">
+              <tr>
+                <th class="table-maincolor table-mainbg">地区
+                </th>
+                <td class="no-indent" colspan="3">
+                  <select name="province" id="province">
+                    <option value="">请选择</option>
+                  </select>省
+                  <select name="city" id="city">
+                    <option value="">请选择</option>
+                  </select>市
+                  <select name="country"id="country">
+                    <option value="">请选择</option>
+                  </select>区
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">身份证号
+                </th>
+                <td colspan="3">
+                  <input type="text" placeholder="请输入身份证号码" class="input-normal" id="idcard" maxlength="18" datatype="idcard" errormsg="输入错误" nullmsg="不能为空" sucmsg="输入正确">
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">姓名
+                </th>
+                <td colspan="3">
+                  <input type="text" placeholder="请输入姓名" class="input-middle" id="pname" maxlength="20" datatype="name" errormsg="请输入中文姓名" nullmsg="姓名不能为空">
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">性别
+                </th>
+                <td colspan="3">
+                  <input type="radio" name="sex" id="man">
+                  <label for="man">男</label>
+                  <input type="radio" name="sex" id="woman">
+                  <label for="woman">女</label>
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">年龄
+                </th>
+                <td colspan="3">
+                  <input type="num" maxlength="3" class="input-small" id="age" datatype="n" errormsg="年龄只能为数字" nullmsg="年龄不能为空">岁
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">户主姓名
+                </th>
+                <td colspan="3">
+                  <input type="text" placeholder="请输入姓名" class="input-middle" id="hzname" maxlength="20" datatype="name" errormsg="请输入中文姓名" nullmsg="户主姓名不能为空">
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">出生日期
+                </th>
+                <td colspan="3">
+                  <input type="date">
+                </td>
+              </tr>
+              <tr>
+                <th>民族</th>
+                <td>
+                  <select name="minzu" id="minzu">
+                    <option value="select">--请选择--</option>
+                    <option value="1">汉族</option>
+                    <option value="2">白族</option>
+                    <option value="3">蒙古族</option>
+                    <option value="4">苗族</option>
+                    <option value="5">壮族</option>
+                    <option value="6">保安族</option>
+                  </select>
+                </td>
+                <td>职业</td>
+                <td>
+                  <select name="minzu" id="minzu">
+                    <option value="select">--请选择--</option>
+                    <option value="1">公务员</option>
+                    <option value="2">白领</option>
+                    <option value="3">学生</option>
+                    <option value="4">保安</option>
+                    <option value="5">教师</option>
+                    <option value="6">销售</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <th>身高</th>
+                <td>
+                  <input type="num" maxlength="3" class="input-small" id="height" datatype="n" ignore="ignore" sucmsg=" ">厘米
+                </td>
+                <td>
+                  体重
+                </td>
+                <td>
+                  <input type="num" maxlength="3" class="input-small" id="height" datatype="n" ignore="ignore" sucmsg=" ">千克
+                </td>
+              </tr>
+              <tr>
+                <th>患者电话</th>
+                <td colspan="3">
+                    <input type="tel" placeholder="请输入电话号码" class="input-middle" id="phone-patient" maxlength="11" datatype="m" nullmsg="手机号不能为空" errormsg="手机号码格式错误">
+                </td>
+              </tr>
+              <tr>
+                <th>家属电话</th>
+                <td colspan="3">
+                    <input type="tel" placeholder="请输入家属电话" id="phone-family"class="input-middle" maxlength="11" datatype="m" nullmsg="手机号不能为空" errormsg="手机号码格式错误">
+                </td>
+              </tr>
+              <tr>
+                <th>村医电话</th>
+                <td colspan="3">
+                    <input type="tel" placeholder="请输入电话号码" id="phone-doctor" maxlength="11" class="input-middle" datatype="m" nullmsg="手机号不能为空" errormsg="手机号码格式错误">
+                </td>
+              </tr>
+              <tr>
+                <th class="table-maincolor table-mainbg">住址
+                </th>
+                <td class="no-indent" colspan="3">
+                  <select name="province" id="province-home">
+                    <option value="">请选择</option>
+                  </select>省
+                  <select name="city" id="city-home">
+                    <option value="">请选择</option>
+                  </select>市
+                  <select name="country" id="country-home">
+                    <option value="">请选择</option>
+                  </select>区
+                </td>
+              </tr>
+            </table>
+        </div>
+      </form>
+        <!-- 手机版病情信息部分 -->
+        <div class="content">
+          <h2>一、癫痫简要病史</h2>
+          <p>重点询问发作表现、持续时间以及发作病因或诱因</p>
+          <textarea name="history-p" id="history-info" cols="100%" rows="3"></textarea>
+          <h2>补充询问：</h2>
+          <table class="supple">
+            <tr>
+              <td>
+                <summary>(1)发作时是否有意识丧失？</summary>
+                <section>
+                  <input type="radio" name="info1" id="info1_1">
+                  <label for="info1_1">每次有</label>
+                  <input type="radio" name="info1" id="info1_2">
+                  <label for="info1_2">无</label>
+                  <input type="radio" name="info1" id="info1_3">
+                  <label for="info1_3">不是每次都有</label>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <summary>(2)发作时是否有四肢抽搐？</summary>
+                <section>
+                  <input type="radio" name="info1" id="info1_1">
+                  <label for="info1_1">每次有</label>
+                  <input type="radio" name="info1" id="info1_2">
+                  <label for="info1_2">无</label>
+                  <input type="radio" name="info1" id="info1_3">
+                  <label for="info1_3">不是每次都有</label>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <summary>(3)发作时是否有大小便失禁？</summary>
+                <section>
+                  <input type="radio" name="info1" id="info1_1">
+                  <label for="info1_1">每次有</label>
+                  <input type="radio" name="info1" id="info1_2">
+                  <label for="info1_2">无</label>
+                  <input type="radio" name="info1" id="info1_3">
+                  <label for="info1_3">不是每次都有</label>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <summary>(4)发作时是否咬伤舌头或摔伤？</summary>
+                <section>
+                  <input type="radio" name="info1" id="info1_1">
+                  <label for="info1_1">每次有</label>
+                  <input type="radio" name="info1" id="info1_2">
+                  <label for="info1_2">无</label>
+                  <input type="radio" name="info1" id="info1_3">
+                  <label for="info1_3">不是每次都有</label>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <summary>(5)发作后有无嗜睡、困倦或肌肉疼痛？</summary>
+                <section>
+                  <input type="radio" name="info1" id="info1_1">
+                  <label for="info1_1">每次有</label>
+                  <input type="radio" name="info1" id="info1_2">
+                  <label for="info1_2">无</label>
+                  <input type="radio" name="info1" id="info1_3">
+                  <label for="info1_3">不是每次都有</label>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <summary>(6)家属或旁人看到过你（病人）发作吗？</summary>
+                <section>
+                  <input type="radio" name="info1" id="info1_1">
+                  <label for="info1_1">每次有</label>
+                  <input type="radio" name="info1" id="info1_2">
+                  <label for="info1_2">无</label>
+                  <input type="radio" name="info1" id="info1_3">
+                  <label for="info1_3">不是每次都有</label>
+                </section>
+              </td>
+            </tr>
+            <tr>
+              <td>(7)首次发作时年龄：<input type="num" class="input-small">(周岁)</td>
+            </tr>
+            <tr>
+              <td>(8)近一年内发作次数：<input type="num" class="input-small">次</td>
+            </tr>
+          </table>
+          <h2>二、既往治疗史</h2>
+          <table>
+            <tr>
+                <td>1.曾在何种医院诊治？</td>
+            </tr>
+            <tr>
+              <td class="td-flex">
+                  <label for="hospital_1"><input type="checkbox" name="hospital-h">
+                  市级医院</label>
+                  <label for="hospital_2"><input type="checkbox" name="hospital-h">
+                  县级医院</label>
+                  <label for="hospital_3"><input type="checkbox" name="hospital-h">
+                  乡卫生院</label>
+                  <label for="hospital_4"><input type="checkbox" name="hospital-h">
+                  个体医生</label>
+              </td>
+            </tr>
+            <tr>
+              <td>2.是否曾被确诊为癫痫？</td>
+            </tr>
+            <tr>
+              <td class="td-flex">
+                  <label for="dianx_1"><input type="radio" name="hasdianx" id="dianx_1">
+                  确诊</label>
+                  <label for="dianx_0"><input type="radio" name="hasdianx" id="dianx_0">
+                  未确诊</label>
+                  <label for="dianxian_2"><input type="radio" name="hasdianx" id="dianxian_2">
+                  不知道</label>
+              </td>
+            </tr>
+            <tr>
+              <td>3.过去曾用过的治疗方法：</td>
+            </tr>
+            <tr>
+              <td class="td-flex">
+                 <label for="treat_0"><input type="radio" name="hastreat" id="treat_0">
+               未治疗过</label>
+               <label for="treat_1"><input type="radio" name="hastreat" id="treat_1">
+                治疗过</label>
+              </td>
+            </tr>
+            <tr>
+              <td>(1)服用过的西药</td>
+            </tr>
+            <tr>
+              <td>
+                  <span class="table-maincolor">药物名称:</span>
+                  <select name="medicine" id="medicine-name">
+                    <option value="苯巴比妥片">苯巴比妥片</option>
+                    <option value="新添苯巴比妥片">新添苯巴比妥片</option>
+                    <option value="第三种药物">第三种药物</option>
+                    <option value="第四种药物">第四种药物</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-maincolor">服用剂量:</span>
+                  <input type="num" placeholder="请输入服用剂量" class="input-middle" id="medicine-jl" style="text-align:center">
+                  <select name="computed" id="medicine-jl-d">
+                    <option value="毫克/日">毫克/日</option>
+                    <option value="片/日">片/日</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-maincolor">服用多长时间:</span>
+                  <input type="num" placeholder="请输入服用时间" class="input-middle" id="medicine-time" style="text-align:center">
+                  <select name="days" id="medicine-time-d">
+                    <option value="天">天</option>
+                    <option value="月">月</option>
+                    <option value="年">年</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="add" id="addhistory">添加</button>
+                <button class="del" id="delhistory">删除</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="nopadding">
+                <div id="showhistory">
+                  <table cellspacing="0" cellpadding="0">
+                    <thead>
+                     <tr>
+                       <td style="width:1rem"><input type="checkbox" id="all-select"> </td>
+                       <td style="width:2.5rem">药品名称</td>
+                       <td style="width:2rem">服用剂量</td>
+                       <td style="width:2rem">服用时间</td>
+                    </tr>
+                   </thead>
+                   <tbody id="list">
+                    <tr class="noData">
+                      <td colspan="4">暂时没有数据</td>
+                    </tr>
+                  </tbody>
+                 </table>
+                </div>
+            </td>
+            </tr>
+            <tr>
+              <td>(2)其它药物：</td>
+            </tr>
+            <tr>
+              <td>
+              <span>药物名称：</span>
+              <input type="text" placeholder="请输入药物名称" class="input-normal"> 
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span>服用剂量：</span>
+              <input type="text" placeholder="请输入剂量" class="input-middle"> 毫克/日
+              </td>
+            </tr>
+            <tr>
+              <td>(3)其它方法：</td>
+            </tr>
+            <tr>
+              <td class="td-flex">
+                <label for="method_1"><input type="checkbox" name="method-other">中药</label>
+                <label for="method_2"><input type="checkbox" name="method-other">针灸</label>
+                <label for="method_3"><input type="checkbox" name="method-other">割治</label>
+                <label for="method_4"><input type="checkbox" name="method-other">埋线</label>
+                <label for="method_5"><input type="checkbox" name="method-other">民间验方</label>
+              </td>
+            </tr>
+          </table>
+          <h2>三、近期治疗与发作情况（指12个月内）</h2>
+          <table>
+            <tr>
+              <td>1.按医嘱每日服药</td>
+            </tr>
+            <tr>
+              <td>
+                  <span class="table-maincolor">药物名称:</span>
+                  <select name="medicine" id="medicine-new-name">
+                    <option value="苯巴比妥片">苯巴比妥片</option>
+                    <option value="新添苯巴比妥片">新添苯巴比妥片</option>
+                    <option value="第三种药物">第三种药物</option>
+                     <option value="第四种药物">第四种药物</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span class="table-maincolor">服用剂量:</span>
+                  <input type="num" placeholder="请输入服用剂量" class="input-middle" id="medicine-new-jl">
+                  <select name="computed" id="medicine-new-jl-d">
+                    <option value="毫克/日">毫克/日</option>
+                    <option value="片/日">片/日</option>
+                  </select>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="add" id="addnew">添加</button>
+                <button class="del" id="delnew">删除</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="nopadding">
+                 <div id="shownew">
+                  <table cellspacing="0" cellpadding="0">
+                    <thead>
+                     <tr>
+                        <td style="width:1.5rem">  
+                          <input type="checkbox" id="all-new-select"> 
+                        </td>
+                       <td style="width:3rem">药品名称</td>
+                       <td style="width:3rem">服用剂量</td>
+                    </tr>
+                   </thead>
+                   <tbody id="list-new">
+                    <tr class="noData">
+                      <td colspan="4">暂时没有数据</td>
+                    </tr>
+                    </tbody>
+                  </table> 
+                  </div>
+              </td> 
+            </tr>
+            <tr> 
+              <td>2.发作次数：</td>
+            </tr>
+            <tr> 
+              <td class="attack-times clearfix">
+                <div class="fl">
+                  <input type="radio" name="fbtimes" id="times-0" class="fbtimes">
+                  <input type="num" class="input-small">
+                  <label for="times-0"> 次/周</label>
+                  <input type="radio" name="fbtimes" id="times-1" class="fbtimes">
+                  <input type="num" class="input-small">
+                  <label for="times-1"> 次/月 </label>
+                  <input type="radio" name="fbtimes" id="times-2" class="fbtimes">
+                  <input type="num" class="input-small">
+                  <label for="times-2"> 次/年 </label> 
+                </div>
+                <div class="attack-t-info fl">
+                  已 <input type="text" name="noattack-times" class="input-small">月未发作
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>服药不规律或从未治疗：
+                  <input type="radio" name="hastreat" id="treat_0">
+                  <label for="treat_0">服药不规律</label>
+                  <input type="radio" name="hastreat" id="treat_1">
+                  <label for="treat_1">从未治疗过</label>
+              </td>
+            </tr>
+            <tr>
+              <td class="td-flex">
+                <div><span class="table-maincolor">调查医师:</span>
+                <input type="text"  id="check-doctor" style="width:1.5rem"></div>
+                <div><span class="table-maincolor">调查日期：</span>
+                <input type="date" class="input-middle"></div> 
+              </td>
+            </tr>
+          </table>
+        </div>
+        <!-- 手机版尾部 -->
+        <div class="footer">
+          <button type="submit" id="btn-save">保存</button>
+          <button type="reset" id="btn-reset">重置</button>
+        </div>
+    </div>
+    <!-- // <script src="js/zepto.min.js"></script> -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/china_area.js"></script>
+    <script src="js/Validform_v5.3.2_min.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
