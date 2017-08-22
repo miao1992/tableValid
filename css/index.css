@@ -1,0 +1,225 @@
+/*保证内容居中显示*/
+
+@media (min-width:300px){
+  .bg{
+        font-size: .24rem;
+    } 
+    input,select{
+       height:.3rem;
+       line-height: .3rem;
+    }
+    .header h1{
+        font-size: 0.3rem;
+    }
+    .content h2{
+        font-size: .24rem;
+    } 
+}
+@media (min-width:500px){
+  .bg,select,input{
+    font-size: .14rem;
+    } 
+    .header h1{
+        font-size: 0.2rem;
+    } 
+    .content h2{
+        font-size: .16rem;
+    } 
+}
+
+ .bg{
+    max-width:640px;
+    height:auto;
+    margin:0 auto;
+    background: #fff;
+} 
+select{ 
+  color:#333;
+}
+
+/*头部样式*/
+
+.header h1{
+    color:#55170a;
+    padding:.1rem 0;
+    font-weight: bold;
+}
+.header table,.content table{
+    width:100%;
+    border: 1px solid #d6ada4;
+    border-spacing: 0px;
+    border-collapse: collapse;
+    text-align: left;
+    border-bottom:0;
+}
+.header td,.header th,.content td{
+    border-bottom: 1px solid #d6ada4;
+    border-right: 1px solid #d6ada4;
+    color: #934030;
+    padding:.1rem 0;   
+}
+.header .message th{
+    width:1.3rem;
+    text-align: center;
+}
+.header td{
+  text-indent: .08rem;
+}
+.header .td-flex{
+    display:flex;
+    width:6.4rem;
+}
+.header .no-indent{
+    text-indent: 0;
+}
+/*header中的公共的样式信息*/
+.header .table-maincolor,.content .table-maincolor{
+    color:#e34c26;
+}
+.header .table-mainbg{
+    background-color: #fce5df;
+}
+.input-small{
+    width:.5rem;
+}
+.input-middle{
+    width:2rem;
+}
+.input-normal{
+    width: 2.5rem
+}
+.header select{
+    width:1.5rem;
+}
+/*病情信息部分样式*/
+.content h2{
+    padding:.1rem 0.1rem;
+    color:#55170a;
+    text-align: left;
+    border: 1px solid #d6ada4;
+    border-top:none;
+    border-bottom:none;
+    overflow: hidden;
+    text-indent:.08rem;
+}
+.content p{
+    padding:0 0 .1rem 0;
+    text-align: left;
+    text-indent: .08rem;
+    border: 1px solid #d6ada4;
+    border-bottom:none;
+    border-top:none;
+}
+.content textarea{
+    width:100%;
+    padding:.1rem;
+    border:1px solid #d6ada4;
+    display: block;
+    box-sizing: border-box;
+}
+.content td{
+    padding:.1rem 0;
+    text-indent: .1rem;  
+}
+
+.content summary{
+    padding: .1rem;
+}
+.content section{
+    padding:0 .1rem 0 .1rem;
+}
+.content .td-indent{
+    padding-left: .2rem;
+}
+.content .supple label{
+    margin-right: .2rem;
+}
+.content .td-flex{
+    display: flex;
+    padding: .1rem;
+    justify-content:space-around;
+    align-items:center;
+}
+/*添加，删除，编辑按钮的样式*/
+.content .add,.content .del,.button-editor,.footer button{
+    color: #fff;
+    padding:.1rem .25rem;
+    background-color: #e34c26;
+    margin-left:.05rem;
+    cursor: pointer;
+    border-radius:.1rem;
+    text-align: center;
+}
+.content .attack-t-info{
+    display: none;
+}
+.content .nopadding{
+    padding:0;
+}
+/*控制添加服用过的药品，超出一定高度自动显示导航条*/
+
+#showhistory table,#shownew table{
+    display: block;
+    min-height: 1.1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 1.1rem;
+    border:0;
+    text-align: center;
+}
+
+#showhistory,#shownew{
+    display: block;
+    width:100%;
+}
+#showhistory table td,#shownew table td{
+     text-indent: 0;
+}
+#showhistory .table-border-noright,#shownew .table-border-noright{
+    border-right:0;
+}
+/*添加药品的编辑按钮样式*/
+#list .button-editor,#list-new .button-editor{
+    margin-left: 0
+}
+#list .input-editor,#list-new .input-editor{
+    width:.5rem;
+}
+/*尾部样式*/
+.footer{
+    padding:10px 0;
+}
+/*引入表单验证的css*/
+/*==========以下部分是Validform必须的===========*/
+.Validform_checktip{
+    margin-left:8px;
+    line-height:20px;
+    height:20px;
+    overflow:hidden;
+    color:#999;
+    font-size:12px;
+}
+.Validform_right{
+    color:#71b83d;
+    padding-left:20px;
+    background:url(../images/right.png) no-repeat left center;
+}
+.Validform_wrong{
+    color:red;
+    padding-left:20px;
+    white-space:nowrap;
+    background:url(../images/error.png) no-repeat left center;
+}
+.Validform_loading{
+    padding-left:20px;
+    background:url(../images/onLoad.gif) no-repeat left center;
+}
+.Validform_error{
+    background-color:#ffe7e7;
+}
+#Validform_msg{color:#7d8289; font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; width:280px; -webkit-box-shadow:2px 2px 3px #aaa; -moz-box-shadow:2px 2px 3px #aaa; background:#fff; position:absolute; top:0px; right:50px; z-index:99999; display:none;filter: progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#999999');}
+#Validform_msg .iframe{position:absolute; left:0px; top:-1px; z-index:-1;}
+#Validform_msg .Validform_title{line-height:25px; height:25px; text-align:left; font-weight:bold; padding:0 8px; color:#fff; position:relative; background-color:#000;}
+#Validform_msg a.Validform_close:link,#Validform_msg a.Validform_close:visited{line-height:22px; position:absolute; right:8px; top:0px; color:#fff; text-decoration:none;}
+#Validform_msg a.Validform_close:hover{color:#cc0;}
+#Validform_msg .Validform_info{padding:8px;border:1px solid #000; border-top:none; text-align:left;}

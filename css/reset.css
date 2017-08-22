@@ -1,0 +1,52 @@
+html,body,div,p,ul,li,dl,li,ol,li,input,h1,h2,h3,h4,h5,h6,textarea,table,tr,td,th,
+input,select{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: normal;
+}
+input,select,textarea,button{
+    border:none;
+    outline:none;
+    vertical-align: middle;
+}
+input-placeholder{
+  font-size: .12rem;
+  text-align: left;
+}
+/*禁止textarea的缩放功能*/
+textarea{
+  resize:none;
+}
+
+ul,li{
+    list-style: none;
+}
+body{
+   font-family:Arial,"Microsoft Yahei UI","Microsoft YaHei",SimHei,"宋体",simsun,sans-serif;
+   background-color: #fff;
+   text-align: center;
+   margin: 0px;   
+}
+/*清除浮动*/
+.clearfix:after{
+    content:"";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix{
+    *zoom:1;
+}
+::selection{
+    background-color: #fce5df;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float:right;
+}
